@@ -1,0 +1,20 @@
+header:
+  - titles:
+      en      : &EN       Home
+    url:        /home.html
+
+  - titles:
+      en      : &EN       Lab Guides
+    url:        /index.html
+
+  - titles:
+      en      : &EN       Database
+    url:        https://collider-parts-db.web.app/
+
+  - titles:
+      en      : &EN       Software Training
+    url:        /software.html
+
+  - titles:
+      en      : &EN       About
+    url:        /about.html
