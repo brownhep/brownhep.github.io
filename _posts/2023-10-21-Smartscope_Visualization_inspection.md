@@ -1,6 +1,7 @@
 ---
 title: Smartscope Visualization inspection
-tags: Smartscope Visualization inspection 2S PSS 
+tags: Smartscope Visualization inspection 2S PSS
+cover: /assets/images/cover/Smartscope.jpg
 ---
 
 # Smartscope: Visualization inspection

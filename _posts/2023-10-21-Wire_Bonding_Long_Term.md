@@ -1,6 +1,7 @@
 ---
 title: Wire Bonding Long Term 2S and PSs Sensors
-tags: Test Irradiation Wire Bonding Long Term 2S PSS Sensors 
+tags: Test Irradiation Wire Bonding Long Term 2S PSS Sensors
+cover: /assets/images/cover/Wire_bonder.jpg 
 ---
 
 # Wire Bonding: Long Term 2S and PSs Sensors

@@ -1,6 +1,7 @@
 ---
 title: Dispensing Robot
 tags: Dispensing Robot Epoxy 2S Sensors
+cover: /assets/images/cover/Glue.jpg
 ---
 
 # Dispensing Robot

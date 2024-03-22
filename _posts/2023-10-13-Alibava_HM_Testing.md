@@ -20,15 +20,38 @@ Pre irradiation = CVIV for diodes, CVIV for strip sensor, and strip tests @20°C
 ## Installing HMs to the Alibaba board
 
 **Materials**
-* Scissors
-* Kapton tape
-* Double sided tape
+* Small flat head screwdriver
+* 3D printed brackets
+* Ceramic plate
+* Left and right HV (high voltage) PCBs with cables installed
+* Gloves
+* 4 3M screws
 
 * Take the sensors out of the fridge
 
-## Placing the Alibava board in the chuck:
 
-* Remove the chuck (HMs attached to alibava board) from the freezer and allow it to warm up to room temperature (until no condensation is on the bad containing the chuck)
+## Placing HMs in the Alibava board
+
+* **If the HMs are irradiated** Allow the HMs to warm up to room temperature (around ~25C).
+* **If the HMs are not irradiated** Take the selected HMs from the dry box.
+* Place the ceramic plate in the Alibava ckuck.
+* Place the **HV PCBs** in the Alibava chuck.
+* Insert the 3M screws to the 3D printed pieces and put them aside.
+* Carefully take the HMs from their bags and place them on the ceramic plate. 
+* Line the HMs with the fanboard of the Alibava board.
+* Carefully place the 3D printed bottom bracket with screws.
+* Screw the 3D printed part.
+    * Make sure that the HMs stay aligned while screwing the 3D printed piece.
+* After that, take the 3D printed top part and screw it to the chuck.
+    * Make sure that the HMs are aligned.
+* Now, the HMs are ready to be wire bonded to the Alibava board. 
+
+**See:** [Alibava wire bonding](https://brownhep.github.io/2023/10/21/Wire_Bonding_HM.html).
+
+
+## Placing the Alibava board in the chuck
+
+* **If the HMs are irradiated** Remove the chuck (HMs attached to alibava board) from the freezer and allow it to warm up to room temperature (until no condensation is on the bad containing the chuck)
 * Place the chuck into the alibava, lining up the black line on the chuck to the base of the alibava stage (move the source to 0.00 in owisoft to have more space)
 * Tighten the screw on the chuck so that it is holding the alibava board in place 
 * Tighten the two screws at the base of the yellow side of the alibava board 
@@ -71,13 +94,13 @@ Pre irradiation = CVIV for diodes, CVIV for strip sensor, and strip tests @20°C
 
 ## Running an Alibava Test:
 
-* Move the IV cable to the chip you want to run in the alibava set up 
+* Move the IV cable to the chip you want to run in the alibava set up (Located in the second compartment of the setup) 
 * Plug in the power cable to the Alibava
 * Turn on the power supply by entering F10* and flipping up the switch so that the red light turns on and ramps up to 900V
     * only needs to be on when running tests, for everything else can turn off = F11* & flip the switch down
-* Set the Labview temp to -15°C, turn on the chiller and set it to -18°C, and turn on the wall air and set its pressure to roughly 15/20psi
-* Note: For calibrating the alibava with unirrad sensors,  set chiller to 15C and labview to 20C with the peltiers set to heating 
-    * Let the temperature of the chuck reach -15°C and make sure the dew point is at least 1.2°C lower than the chuck temperature. Ideally you want the dew point to sit around -18°C 
+* **If the HMs are irradiated** Set the Labview temp to -15°C, turn on the chiller and set it to -18°C, and turn on the wall air and set its pressure to roughly 15/20psi
+    * Let the temperature of the chuck reach -15°C and make sure the dew point is at least 1.2°C lower than the chuck temperature. Ideally you want the dew point to sit around -18°C
+* **If the HMs are not irradiated** For calibrating the alibava with unirrad sensors, set chiller to 15C and labview to 20C with the peltiers set to heating  
 * In Owisoft, set the radiation source location to be centered over the chip being tested
 * Open **Alibava GUI**
     * Hit file, open, select the irradiation study file
@@ -87,17 +110,24 @@ Pre irradiation = CVIV for diodes, CVIV for strip sensor, and strip tests @20°C
         ```bash
         cd Alibava
         cd Soap
-        nano SOAP_HVScan_HiStatCal.py     
-        ```
-        * To find the Run name: crtl + W, search for “file” 
+        nano SOAP_HVScan_HiStatCal.py    
+        ```java
+        * To find the Run name: `crtl + W`, search for `file_name` 
             * Change the name of the file for this specific test/chip/date
         * To save: `crtl + o` , `enter`
         * To exit: `crtl + x`
+        ```
 
-        ```bash
+        ```java
         unset PYTHONHOME
         python2 SOAP_HVScan_HiStatCal.py -300 -900 
         ```
+
+        * **For unirradiated HMs**
+        ```java
+        python2 SOAP_HVScan_HiStatCal.py -200 -900
+        ```
+
         * Hit `enter` when ready to run the test
 
 ## Analyzing Test Results
@@ -106,8 +136,8 @@ Pre irradiation = CVIV for diodes, CVIV for strip sensor, and strip tests @20°C
 * Move the run files from the computer (AlibavaGUI folder) into your brux using the WinSCP app
     * Make a folder for each HM diode, and within that folder make a folder for each annealing step `Ann#`
 * In Brux, run the analysis to produce the summary files and root files for each test:
+    ```java
     cd Alibava (can use cd .. to go back a directory)
-    ```bash
     cd Condor     
     ls
     source setup_Alibava.sh
@@ -115,7 +145,7 @@ Pre irradiation = CVIV for diodes, CVIV for strip sensor, and strip tests @20°C
     ```
     * Rename the run file and renavigate to the correct folder. Then save. 
     
-    ```bash 
+    ```java 
     nano Run#####_###_PSS or 2-S.txt
     ```
     * You only need to edit this run file for the first Annealing step
@@ -129,17 +159,20 @@ Pre irradiation = CVIV for diodes, CVIV for strip sensor, and strip tests @20°C
         * `Line 6 & Line 7 = first strip + 5 -127 last strip -5 -127 for C1`
         * `Line 8 = 6   7 originally, before subtracting/adding 5`
         * `Line 9 = time cut = 28  53 = leave the same` 
-    ```bash
+
+    ```java
     cd condor    
     ls
     python condor_new.py /isilon/data/users/ctiley/Alibava/Condor/Run#####_###_2-S.txt /isilon/data/users/ctiley/Alibava/Condor/C#_Ann#.txt
     ```
     * Type `condor_q` to see how the data progresses, it should take a few min
         * If something is wrong, AKA running super fast/error, it is most likely a spelling error
-    ```bash
+
+    ```java
     cd .. (Condor)
     python LongTermData.py Run#####_###_2-S.txt C#_Ann#.txt 1 7
     ```
+
     * If this runs correctly, it will bring up a window of some of the root maps for the data. If not, nothing will pop up
     * This will produce summary `files/root` files in your brux account
 * In WinSCP, transfer the summary files for the 600V and 800V data into the HEP shared drive: Hep, Testing, Alibava, Summary files folder
@@ -147,20 +180,25 @@ Pre irradiation = CVIV for diodes, CVIV for strip sensor, and strip tests @20°C
     * Click file, go to open, navigate to summary files, open them
     * Copy the data from the summary file into the excel files
 * To get the leakage current data, in Brux:
-    ```bash
+
+    ```java
     cd Alibava
     cd Soap
     cd Current File
     ls -ltr  (this produces a list of this folders contents, backwards)
     nano “Run file name” 
     ```
+
     * Copy the data from 600V and 800V, ignoring the negative sign, and past it into the excel doc
+
 * To see the root file graphs, in Brux:
-    ```bash
+
+    ```java
     cd Alibava/2S_Irrad_Sensors/Sensor folder /Ann# folder/ 
     source ~/Alibava/Condor/setup_Alibava.sh 
     root (run file name for -600V_0.root)
     ```
+    
     * In root server, type in: `TBrowser b`  = opens root browser window
     * go to the root files folder for that HMs data
         * You can search for your desired files/graphs

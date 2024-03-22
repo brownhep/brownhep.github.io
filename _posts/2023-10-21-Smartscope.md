@@ -1,6 +1,7 @@
 ---
 title: Smartscope Laser Scanning Tool
-tags: Smartscope laser Scan Scanning Tool Sensors 2S PSS HM  
+tags: Smartscope laser Scan Scanning Tool Sensors 2S PSS HM
+cover: /assets/images/cover/Smartscope.jpg  
 ---
 
 # Smartscope: Laser Scanning Tool

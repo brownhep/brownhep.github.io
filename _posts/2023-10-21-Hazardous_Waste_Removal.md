@@ -1,6 +1,7 @@
 ---
 title: Hazardous Waste Removal EPOXY
-tags: Waste Removal Epoxy 
+tags: Waste Removal Epoxy
+cover: /assets/images/cover/Disposal.jpg
 ---
 
 # Hazardous Waste Removal: EPOXY

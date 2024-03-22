@@ -72,8 +72,9 @@ Turn on the wall air & the power strip for the set-up
 Turn on all of the temp control & current measuring machines, making sure the Julabo is set to the appropriate temperature needed for the test. 
 * Unirradiated diodes get ran at room temperature 20°C
     * Set the temp on the Lulabo to `19.25`{:.warning} & the temp in labview to 20°C
-* Irradiated diodes are run at 0°C (HGcal, D0) or -20°C (HM).
+* Irradiated diodes are run at 0°C (HGcal, D0)
     * For 0°C, set Julabo to -0.5°C
+* Irradiated HMs are run at 20°C.
 
 ## Labview
 
@@ -87,10 +88,8 @@ IMPORTANT: The load configuration & sensor type are different for each diode.
 
 * **Dzeros**: either `D0_preirr_IV.cfg` or `D0_preirr_CV.cfg` & `N type`
     * For irradiated diodes: `D0_postirr_IV.cfg` or `D0_postirr_CV.cfg`
-* **Halfmoons**: `IT_Diodes_Preirr_IV.cfg` & `IT_Diodes_Preirr_CV.cfg`  
-* **P type**
-    * OR: `IT_Postirr_Diodes_Half.cfg`  &  `P type`
-            * We only need to run the CV of unirradiated diodes up to 600V, this older config file runs them up to 1000 volts. Irradiated diodes need their CVs tested up to 1000V.
+* **Halfmoons**: `IT_Diodes_Preirr_IV.cfg` & `IT_Diodes_Preirr_CV.cfg` & `P type` OR: `IT_Postirr_Diodes_Half.cfg`  &  `P type`
+    * We only need to run the CV of unirradiated diodes up to 600V, this older config file runs them up to 1000 volts. Irradiated diodes need their CVs tested up to 1000V.
     * Irradiated: `IT_Postirr_Diodes.cfg`
 * **HGcal**: `IT_Postirr_Diodes_Half.cfg` & `P type`
     * Irradiated: `IT_Postirr_Diodes.cfg`
@@ -191,24 +190,24 @@ Once the test is finished, and the voltage has decreased back to 0 volts, lift u
 
 Transfer the files into the HEP Shared Drive:
 * For **HGcal diodes**: 
-```yaml
+```java
 HEP_Shared - Testing - CVIV - Data - HGCal - preirrad or post irrad - batch# - diode#
 ```
 
 * **HGcal diodes** get run for CV/IV preirradiation, and then post-irradiation, in annealing steps from 0 - 100 minutes in 10 minute increments. This is done to find the minimum depletion voltage  
 * For **D0 diodes**: 
-```yaml
+```java
 HEP_Shared - Testing - CVIV - Data - D0 diodes - either 0min, 80 min, OR pre-irradiation
 ```
 * The **D0 diodes** get testing for CV/IV three times: before irradiation, directly after irradiation with no annealing (0 minutes), and then after 80 minutes of annealing 
 
 * For **Pin diodes**: 
-```yaml
+```java
 HEP_Shared - Testing - Pin diodes - data - irradiated or unirradiated - specific pin diode#
 ```
 
 * For **Halfmoon diodes**: 
-```yaml
+```java
 HEP_shared - pre production - irradiation studies - data - post irrad OR preirrad - 2S OR PSs - specific batch number folder - specific sensor number folder
 ```
 
@@ -229,7 +228,7 @@ Coding step using Spyder: (TBA)
 * Comet:
     * Open the Anaconda Powershell Promt app on your desktop
         * Type in: conda activate comet
-            ```yaml
+            ```java
             cd C:\Comet
             python comet.py
             ```
