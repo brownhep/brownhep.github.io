@@ -1,7 +1,7 @@
 ---
 title: MaPSA Test
 tags: Test MaPSA MPA Probe Tesla
-cover: /assets/images/cover/
+cover: /assets/images/cover/MaPSApic.png
 ---
 
 # MaPSA Probe Testing
