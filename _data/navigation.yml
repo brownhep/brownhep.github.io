@@ -16,5 +16,9 @@ header:
     url:        /software.html
 
   - titles:
+      en      : &EN       Assembly
+    url:        /assembly.html
+
+  - titles:
       en      : &EN       About
     url:        /about.html

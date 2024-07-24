@@ -198,6 +198,12 @@ exclude:
   - /node_modules
   - /vendor
 
+collections:
+  assemblyfiles:
+    output: true
+  labguides:
+    output: true
+
 defaults:
   - scope:
       path: ""
@@ -211,7 +217,6 @@ defaults:
       show_edit_on_github: true
       show_subscribe: false
       pageview: true
-
 
 ## => Plugins
 ##############################
