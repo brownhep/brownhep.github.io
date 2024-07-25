@@ -1,7 +1,7 @@
 ---
 title: PS-s Carrier Plate
 tags: PSS Carrier Plate screws
-cover: /assets/images/Carrier_plate/Top_completed.jpg
+cover: /assets/images/cover/carrier_plate.jpg
 ---
 
 # Introduction
@@ -402,7 +402,7 @@ Turn around the carrier plate
         <img src="/assets/images/Carrier_Plate/top_completed2.jpg" width="86%" alt="Carrier plate finalized1">
     </div>
     <div class="cell cell--auto">
-        <img src="/assets/images/Carrier_Plate/Top_completed1.jpg" alt="Carrier plate finalized2">
+        <img src="/assets/images/Carrier_Plate/top_completed1.jpg" alt="Carrier plate finalized2">
   </div>
 </div>
 </center>
