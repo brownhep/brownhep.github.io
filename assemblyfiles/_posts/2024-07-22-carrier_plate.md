@@ -119,7 +119,7 @@ Use this guide to assemble the carrier plate for the PS-s module.
   </div>
   <div class="cell cell--auto">
     <ul>
-      <li>Insert the M3x12 screws insert into the feet</li>
+      <li>Insert the M3x12 screws into the feet</li>
     </ul>
     <img src="/assets/images/Carrier_Plate/M3.jpg" width="70%" alt="M3"> 
   </div>
@@ -180,7 +180,7 @@ Use this guide to assemble the carrier plate for the PS-s module.
 <div class="grid">
     <div class="cell cell--auto">
         <ul>
-            <li>This screws will hold down the 3D printed standoff (See Step # for installation)</li>
+            <li>This screws will hold down the 3D printed standoff (See Step 6 for installation)</li>
         </ul>
     </div>
     <div class="cell cell--auto">
@@ -303,7 +303,7 @@ Turn around the carrier plate
     <div class="cell cell--auto">
         <ul>
             <li>Locate the M3 screws that are sticking out</li>
-            <li>Tighten the metal hex standoffs until secured</li>
+            <li>Tighten the metal hex standoffs until secure</li>
         </ul>
     <center>
         <img src="/assets/images/Carrier_Plate/hex_standoffs.jpg" width="80%" alt="Standoffs">
@@ -316,7 +316,7 @@ Turn around the carrier plate
 <div class="grid">
     <div class="cell cell--auto">
         <ul>
-            <li>After all of the screws are assembled these are the screws that hold down the top side acrylic plate with the nuts</li>
+            <li>These are the screws that hold down the top side acrylic plate with the nuts</li>
         </ul>
     </div>
     <div class="cell cell--auto">
@@ -346,9 +346,9 @@ Turn around the carrier plate
 <div class="cell cell--auto">
     <ul>
       <li>Locate the M2 screws that are sticking out</li>
-      <li>Tighten the 3D printed hex standoffs until secured</li>
+      <li>Tighten the 3D printed hex standoffs until secure</li>
       <ul>
-        <li>It needs a slight pressure to place it and make the thread inside the barrel</li>
+        <li>It needs a slight pressure to install it and form the thread inside the barrel</li>
       </ul>
     </ul>
   </div>
@@ -390,7 +390,7 @@ Turn around the carrier plate
     * The acrylic top will only fit in one direction
 * The inner holes should align with the 3D printed hex standoffs
 * Using the wrench, tighten up the acrylic top using the nuts
-    * It doesn't require to be tighted all the way down
+    * Do not over-tighten the nuts
 
 ---
 
