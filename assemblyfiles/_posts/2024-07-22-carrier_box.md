@@ -16,11 +16,11 @@ This guide will explain step by step how  to ensure the modules inside their car
 **Important! Wear gloves while handling the modules**: The carrier plate is coated with ESD-safe material. To prevent degradation of the coating by finger grease and dirt, avoid direct contact with the plate.
 {:.error}
 
-# Reasoning: 20 % Improvement
+# Reasoning: 20 % Improvement  
 
 <ul>
     <li>
-    Even though the carrier boxes are designed to be waterproof, we have tracked the humidity levels inside, and the isolation on most cages will not be enough to keep humidity under room values for a few hours.<br>
+    Even though the carrier boxes are designed to be waterproof, we have tracked the humidity levels inside, and the isolation on most cages will not be enough to keep humidity under room values for more than a few hours.<br>
     We have spent weeks testing different methods that make it possible to mantain humidity as low as needed. In the following graph, it can be seen how this protocole makes a difference of 20 %, using the same type of carrier box in similar environments over two days. 
     </li>
 </ul>
@@ -49,7 +49,7 @@ This guide will explain step by step how  to ensure the modules inside their car
             </tr>
             <tr>
                 <td>Nitrogen Gas </td>
-                <td>Cylinder with gauge and <a href="https://www.amazon.com/Milton-S-698-FNPT-Single-Chuck/dp/B0002SQT9Q?th=1">schrader type valve connector</td>
+                <td>Cylinder with gauge and <a href="https://www.amazon.com/Milton-S-698-FNPT-Single-Chuck/dp/B0002SQT9Q?th=1">Schrader type valve connector</a></td>
             </tr>
             <tr>
                 <td>Silicone</td>
