@@ -16,7 +16,7 @@ This guide will explain step by step how  to ensure the modules inside their car
 **Important! Wear gloves while handling the modules**: The carrier plate is coated with ESD-safe material. To prevent degradation of the coating by finger grease and dirt, avoid direct contact with the plate.
 {:.error}
 
-# Reasoning: 
+# Reasoning: 20 % Improvement
 
 <ul>
     <li>
@@ -49,7 +49,7 @@ This guide will explain step by step how  to ensure the modules inside their car
             </tr>
             <tr>
                 <td>Nitrogen Gas </td>
-                <td>Cylinder with gauge and valve connector </td>
+                <td>Cylinder with gauge and <a href="https://www.amazon.com/Milton-S-698-FNPT-Single-Chuck/dp/B0002SQT9Q?th=1">schrader type valve connector</td>
             </tr>
             <tr>
                 <td>Silicone</td>
