@@ -2,6 +2,7 @@
 title: PS-s Carrier Plate
 tags: PSS Carrier Plate screws
 cover: /assets/images/cover/carrier_plate.jpg
+permalink: /assemblyfiles/carrierplate.html
 ---
 
 # Introduction
