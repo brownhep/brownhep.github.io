@@ -3,7 +3,6 @@ title: Module Carrier Box
 tags: Carrier Plate Strap
 cover: /assets/images/cover/carrier_box_cover.jpeg
 chart: true
-permalink: /assemblyfiles/carrierbox.html
 ---
 
 # Introduction:
