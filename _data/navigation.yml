@@ -8,16 +8,16 @@ header:
     url:        /index.html
 
   - titles:
+      en      : &EN       Assembly
+    url:        /assembly.html
+
+  - titles:
       en      : &EN       Database
     url:        https://collider-parts-db.web.app/
 
   - titles:
       en      : &EN       Software Training
     url:        /software.html
-
-  - titles:
-      en      : &EN       Assembly
-    url:        /assembly.html
 
   - titles:
       en      : &EN       About
