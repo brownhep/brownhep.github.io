@@ -26,7 +26,7 @@ title: Assembly
                 </div>
                 <div class="card__content">
                     <div class="card__header">
-                        <p>PSS Assembly</p>
+                        <p>PS Assembly</p>
                     </div>
                 </div>
             </div>
