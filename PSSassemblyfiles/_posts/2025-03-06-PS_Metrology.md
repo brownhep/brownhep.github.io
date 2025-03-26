@@ -20,7 +20,7 @@ Run time: `(4 minutes)`{:.info}
 ```java
 (PS_Sandwich_Metrology_Carrier.rtn)
 ```
-* When prompted name results in format `PS_40_BRN-10001_Run1.DAT`{:.warning} and `PS_40_BRN-10001_Run1.TXT`{:.warning}
+* When prompted name results in format `PS_XX_BRN-1XXXX_RunX.DAT`{:.warning} and `PS_XX_BRN-1XXXX_RunX.TXT`{:.warning}
 * Initial 2 alignment points in routine are the 2 non-insert holes between the 2 inserts.
 * Routine will then move to sensor fiducials.  It will take the centroid of the circle in the middle of the L fiducial and then move the circle to where it thinks the circle is.  If centroid was correct just press enter, otherwise move circle to the correct position and then press enter.
 * Routine will then take pictures of the scratchpad on the PSS and the arrow on the PSP
@@ -30,7 +30,7 @@ Run time: `(4 minutes)`{:.info}
 ## Analyze data
 * Copy **TXT file** and **BMPs** from Smartscope computer to shared drive 
 ```java
-(S:/Assembly/Metrology/2S/<module_name>)
+(S:/Assembly/Metrology/PS/<module_name>)
 ```
 * Go to [colab.google](https://colab.google/) and login with brownhep account
 * Open 
@@ -42,9 +42,9 @@ PS_Sandwich_Metrology.ipynb
 * Scroll to the bottom of the page to see the output (any out of spec measurements will show up in `red`{:.error})
 
 ```java
-Files to analyze:  ['PS_40_BRN-10005_Run4.TXT']
+Files to analyze:  ['PS_XX_BRN-1XXXX_RunX.TXT']
 
-Analyzing PS_40_BRN-10005_Run4.TXT...
+Analyzing PS_XX_BRN-1XXXX_RunX.TXT...
 Date: 01:23:25 17:03:40 
 
 SANDWICH METROLOGY:
@@ -76,7 +76,7 @@ y
 |
 o--> x
 
-Generating XML: PS_40_BRN-10005_Run4.xml
+Generating XML: PS_XX_BRN-1XXXX_RunX.xml
 
 ```
 

@@ -22,7 +22,7 @@ One can do a quick metrology, which measures only the sandwich alignment and mod
 (2S_Sandwich_Metrology_Quick.rtn, 2S_Sandwich_Metrology_Full.rtn)
 ```
 * Routine will move to the 4 alignment needles, align crosshair to needle tip and press enter on the joystick
-* When prompted name results in format `2S_18_5_BRN-10001_Full_Run1.TXT`{:.warning}
+* When prompted name results in format `2S_XX_X_BRN-1XXXX_Full_RunX.TXT`{:.warning}
 * Routine will then move to bridges. For long bridges move circle over holes in the bridges and press enter. For stump bridges move crosshair to corner of bridges and press enter (for 5 point modules just press enter when crosshair is in the position of the missing stump bridge)
 * Routine will then move to sensor fiducials.  It will take the centroid of the circle in the middle of the **L** fiducial and then move the circle to where it thinks the circle is.  If centroid was correct just press enter, otherwise move circle to the correct position and then press enter.
 * Routine will then take pictures `Top_Sensor.BMP`{:.warning} and `Top_Sensor_Rot.BMP`{:.warning}.  If the scratchpads are in the former picture the top sensor is in the **Not Rotated** state.  If the scratchpads are in the _Rot picture, the top sensor is in the **Rotated state**.
@@ -46,9 +46,9 @@ Repeat the above steps (minus the bridge measurements) on the back side.
 * Scroll to the bottom of the page to see the output (any out of spec measurements will show up in `red`{:.error}).  
 
 ```java
-Files:  ['2S_18_5_BRN-10001_Full_Run1.TXT'] 
+Files:  ['2S_XX_X_BRN-1XXXX_Full_RunX.TXT'] 
 
-Analyzing 2S_18_5_BRN-10001_Full_Run1.TXT...
+Analyzing 2S_XX_X_BRN-1XXXX_Full_RunX.TXT...
 
 BRIDGE and SENSOR POSITIONS:
 Offset from nominal position of bridges (0-100 um) and sensors (100-200 um check jig, > 200 um bad) in um
@@ -89,7 +89,7 @@ NEEDLE CHECK (Verifies that needle positions from top and bottom align and measu
 
 Distance top-bottom needle pair  10.07 7.37 11.63 4.8
                    
-Generating XML: 2S_18_5_BRN-10001_Full_Run1.xml
+Generating XML: 2S_XX_X_BRN-1XXXX_Full_RunX.xml
 ```
 
 ## Make entry into local DB
