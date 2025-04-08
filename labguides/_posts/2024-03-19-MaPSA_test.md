@@ -28,7 +28,7 @@ pixelated PS-p sensor and the MPA (Macro Pixel ASIC) readout chip. The PS module
 
 <div class="card">
   <div class="card__image">
-    <img class="image" src="/assets/images/s-l1600.jpg"/>
+    <img class="image" src="/assets/images/MaPSA/s-l1600.jpg"/>
   </div>
   <div class="card__content">
     <div class="card__header">
@@ -87,7 +87,7 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 ```
 
 * When the GUI launches it should look like this:
-![MaPSA GUI](/assets/images/GUI1.png)
+![MaPSA GUI](/assets/images/MaPSA/GUI1.png)
 
 
 ## MaPSA
@@ -99,7 +99,7 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 
 <div class="grid">
   <div class="cell cell--auto">
-    <img src="/assets/images/MaPSA_box.jpg" alt="MaPSA box">
+    <img src="/assets/images/MaPSA/MaPSA_box.jpg" alt="MaPSA box">
   </div>
   <div class="cell cell--4">
     <ul>
@@ -114,7 +114,7 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 
 <div class="grid">
   <div class="cell cell--auto">
-    <img src="/assets/images/MaPSA_pins.jpg" alt="MaPSA Pins">
+    <img src="/assets/images/MaPSA/MaPSA_pins.jpg" alt="MaPSA Pins">
   </div>
   <div class="cell cell--4">
     <ul>
@@ -129,28 +129,28 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 
 <div class="grid">
   <div class="cell cell--auto">
-    <img src="/assets/images/Velox.jpg" alt="Velox">
+    <img src="/assets/images/MaPSA/Velox.jpg" alt="Velox">
   </div>
   <div class="cell cell--4">
     <ul>
-      <li>On the prober's computer select <b>Home icon</b> <img src="/assets/images/Home_icon.jpg" width="25" height="25" alt="Home icon"> </li>
-      <li>Lift the chuck by using the arrows in the Z setup</li><img src="/assets/images/arrows.jpg" width="10%" height="10%" alt="Arrows">
+      <li>On the prober's computer select <b>Home icon</b> <img src="/assets/images/MaPSA/Home_icon.jpg" width="25" height="25" alt="Home icon"> </li>
+      <li>Lift the chuck by using the arrows in the Z setup</li><img src="/assets/images/MaPSA/arrows.jpg" width="10%" height="10%" alt="Arrows">
       <ul>
         <li>Lift the chuck up to 28000.0 or until you see faintly the MaPSA and make sure that the needles are in the pads</li>
       </ul>
     </ul>
-    <center><img src="/assets/images/Z-setup.jpg" width="50%" height="50%" alt="Z-setup"></center>
+    <center><img src="/assets/images/MaPSA/Z-setup.jpg" width="50%" height="50%" alt="Z-setup"></center>
   </div>
 </div>
 
 
 ### Step 4: Alignment
 
-![MaPSA Pads](/assets/images/MaPSA_pads.png)
+![MaPSA Pads](/assets/images/MaPSA/MaPSA_pads.png)
 
 <div class="grid">
   <div class="cell cell--auto">
-    <img src="/assets/images/pads.png" alt="Pads">
+    <img src="/assets/images/MaPSA/pads.png" alt="Pads">
   </div>
   <div class="cell cell--4">
     <ul>
@@ -167,7 +167,7 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 
 <div class="grid">
   <div class="cell cell--auto">
-    <img src="/assets/images/Velox.jpg" alt="Velox">
+    <img src="/assets/images/MaPSA/Velox.jpg" alt="Velox">
   </div>
   <div class="cell cell--4">
     <ul>
@@ -184,14 +184,14 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 
 ### Step 5: Make contact
 
-* Lower the needles using <img src="/assets/images/lower_needles.jpg" width="10%" height="10%" alt="Arrows"> on the Z Setup
+* Lower the needles using <img src="/assets/images/MaPSA/lower_needles.jpg" width="10%" height="10%" alt="Arrows"> on the Z Setup
   * `Red box`{:.error} :No contact
   * `Yellow box`{:.warning} :Before contact
   * `Green box`{:.success} : **Contact** 
 
 ### Step 6: Fill in the info
 
-![MaPSA GUI](/assets/images/GUI1.png)
+![MaPSA GUI](/assets/images/MaPSA/GUI1.png)
 * On MaPSA ID:
 
 ```java
@@ -242,7 +242,7 @@ Line Status:
 * After this run the `IV Scan`
   * This takes ~8 minutes
 
-![MaPSA GUI2](/assets/images/GUI2.png)
+![MaPSA GUI2](/assets/images/MaPSA/GUI2.png)
 * After it finishes, go to `Plotting` tab and click on `Draw IV` 
   * This test runs up to -800V and as voltage goes up, the current goes up (Ohm's Law)
   * An example of the first voltage and current taken and last
@@ -266,7 +266,7 @@ Line Status:
 * This test should take ~4.5 minutes (for each MPA)
 * After it finishes, click `Plotting` tab
 
-![MaPSA GUI2](/assets/images/GUI2.png)
+![MaPSA GUI2](/assets/images/MaPSA/GUI2.png)
 
 * Click `Draw 2D summary plots`
 * This will plot the current and previous MPA tested
@@ -275,11 +275,57 @@ Line Status:
 
 ## Troubleshoot 🛠️
 
-> :warning: **Errors**
+### :warning: **Error:** After Pixel Alive
 
 ```java
 pyvisa.error.VisaIOError: VI_ERROR_RSRC_BUSY (-1073807246): The resource is valid, but VISA cannot currently access it.
 ```
+:memo: **Solution:** Disconnect the white long USB Type A (on the floor), reconnect and try the Pixel Alive again
+
+### :warning: **Error:** No plot after Pixel Alive and the following error: 
+
+```java
+Line Status:
+  Tuning done/applied: 0
+  Line ID: 4,   Idelay: 15,   Bitslip: 7,   WA FSM State: 13,   PA FSM State: 14
+Line Status:
+  Tuning done/applied: 0
+  Line ID: 4,   Idelay: 15,   Bitslip: 7,   WA FSM State: 13,   PA FSM State: 14
+Failed tuning line 4
+Line Configuration:
+  Line ID: 5,   Mode: 0,    Master line ID: 0,    Idelay: 0,    Bitslip: 0
+Line Status:
+  Tuning done/applied: 0
+  Line ID: 5,   Idelay: 0   Bitslip: 0    WA FSM State: 0   PA FSM State: 12
+
+Line Status:
+  Tuning done/applied: 0
+  Line ID: 5    Idelay: 0   Bitslip: 0,   WA FSM State: 0,    PA FSM State: 12
+Line Status:
+  Tuning done/applied: 0
+  Line ID: 5,   Idelay: 0,  Bitslip: 0,   WA FSM State: 0,    PA FSM State: 12
+Failed tuning line 5
+-> Initialised SLVS pads and sampling edges
+-> Sampling phases tuned
+-> Activated normal readout mode
+('ASRL1: : INSTR', 'ASRL2 : : INSTR', 'ASRL3: : INSTR', "ASRL4: : INSTR')
+
+KEITHLEY INSTRUMENTS INC.,MODEL 2410,4457440, C34 Sep 21 2016 15:30:00/A02 /K/M
+Fail: 2
+Fail: 2
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/tkinter/_init_.py", line 1705, in__call__
+    return self.func(*args)
+  File "/home/jluo/Documents/MaPSA/MaPSA_Testing/MPA2_Testing/MPA2_Test/main.py", line 425, in pa
+    pixel_alive = mpa.cal.pixel_alive(ref_cal=cal, ref_thr=thr, pulse_delay=delay, plot=1)
+  File "/home/jluo/Documents/MaPSA/MaPSA_Testing/MPA2_Testing/MPA2_Test/mpa_methods/mpa_cal_utility.py", line 334, in pixel alive
+    tempnom = self.conf.convertRawToNomPixmap(temp)
+  File "/home/jluo/Documents/MaPSA/MaPSA_Testing/MPA2_Testing/MPA2_Test/myScripts/mpa_configurations.py", line 74, in convertRawToNomPixmap
+    nomdata.append(data[p])
+TypeError: 'int' object is not subscriptable
+```
+:memo: **Solution:** This error is due to bad connection, reposition the needles (no more than 5µm in X or Y) and try again.
 
 
 ## References 📝
