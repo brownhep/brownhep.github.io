@@ -97,18 +97,28 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 * Take the MaPSA out of the dry box
 * Open the compartment of the prober
 
+The most reliable way to check the first MPA is by turning the MaPSA around and check the PS for this corner:
+
 <div class="grid">
+  <div class="cell cell--auto">
+    <img src="/assets/images/MaPSA/MPA1.jpg" alt="First MPA">
+  </div>
+  <div class="cell cell--shrink">
+    <p><b>Or:</b></p>
+  </div>
   <div class="cell cell--auto">
     <img src="/assets/images/MaPSA/MaPSA_box.jpg" alt="MaPSA box">
   </div>
   <div class="cell cell--4">
     <ul>
       <li>Turn around the MaPSA box and locate a flat corner in the box</li>
+      <ul>
+        <li><b>IF</b> its Hamamatsu (this will be explained in Step:6)</li>
+      </ul>
       <li>This flat corner locates the <b>First MPA</b> of the MaPSA</li>
     </ul>
   </div>
 </div>
-
 
 ### Step 2: Placing the MaPSA
 
@@ -136,7 +146,7 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
       <li>On the prober's computer select <b>Home icon</b> <img src="/assets/images/MaPSA/Home_icon.jpg" width="25" height="25" alt="Home icon"> </li>
       <li>Lift the chuck by using the arrows in the Z setup</li><img src="/assets/images/MaPSA/arrows.jpg" width="10%" height="10%" alt="Arrows">
       <ul>
-        <li>Lift the chuck up to 28000.0 or until you see faintly the MaPSA and make sure that the needles are in the pads</li>
+        <li>Lift the chuck up until you see faintly the MaPSA and make sure that the needles are in the pads</li>
       </ul>
     </ul>
     <center><img src="/assets/images/MaPSA/Z-setup.jpg" width="50%" height="50%" alt="Z-setup"></center>
@@ -191,14 +201,33 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 
 ### Step 6: Fill in the info
 
-![MaPSA GUI](/assets/images/MaPSA/GUI1.png)
+* There is two different vendors that supplies the MaPSAs
+  * Hamamatsu
+  * QPT
+
+To identify the vendors:
+<div class="grid">
+  <div class="cell cell--auto">
+    <img src="/assets/images/MaPSA/Vendors.jpg" alt="MaPSA box vendors">
+  </div>
+  <div class="cell cell--4">
+    <ul>
+      <li>Envelope: <b>QPT</b></li>
+      <li>Case cover: Hamamatsu <b>HPK</b></li>
+    </ul>
+  </div>
+</div>
+
 * On MaPSA ID:
 
 ```java
-HPK_XXXXX_XXX[X]
+HPK_XXXXX_XXX[X] (If its Hamamatsu)
+QPT_XXXXX_XXX[X] (If its QPT)
 ```
 
 * The final character being the letter of the side of the MaPSA (**L**eft or **R**ight)
+
+![MaPSA GUI](/assets/images/MaPSA/GUI1.png)
 
 * On the MPA box fill in the number of the current MPA being tested.
   * `Note`{:.warning} that each time the user finish testing one MPA and moves the needles to the next MPA, the user has to change this number manually, otherwise it **WILL** overwrite the data
@@ -232,6 +261,7 @@ Line Status:
 
 * If the contact is not good, you will get an output with the Total Power and current numbers off by 10-20 mW or even 100mW!
   * Additionally it can output an error
+    * Check the Troubleshoot for help
 * After this, click `Pixel Alive`
 * This will generate a plot with the status of the pixel and if it has noise or other problem with it (Operational)
 
@@ -280,7 +310,10 @@ Line Status:
 ```java
 pyvisa.error.VisaIOError: VI_ERROR_RSRC_BUSY (-1073807246): The resource is valid, but VISA cannot currently access it.
 ```
-:memo: **Solution:** Disconnect the white long USB Type A (on the floor), reconnect and try the Pixel Alive again
+:memo: **Solution:** USB connection error
+* Disconnect the white long USB Type A (on the floor)
+* Reconnect USB
+* Try again **Pixel Alive**
 
 ### :warning: **Error:** No plot after Pixel Alive and the following error: 
 
@@ -325,8 +358,25 @@ Traceback (most recent call last):
     nomdata.append(data[p])
 TypeError: 'int' object is not subscriptable
 ```
-:memo: **Solution:** This error is due to bad connection, reposition the needles (no more than 5µm in X or Y) and try again.
+:memo: **Solution:** Bad connection
+* Press **Power Off** on the GUI to power off the MPA
+* Reposition the needles (no more than 5µm in X or Y) and try again.
 
+Other examples of bad connection:
+
+<center>
+<div class="row">
+  <div class="column">
+    <img src="/assets/images/MaPSA/noise1.png" alt="Noise 1">
+  </div>
+  <div class="column">
+    <img src="/assets/images/MaPSA/noise2.png" alt="Noise 2">
+  </div>
+  <div class="column">
+    <img src="/assets/images/MaPSA/noise3.png" alt="Noise 3">
+  </div>
+</div>
+</center>
 
 ## References 📝
 
