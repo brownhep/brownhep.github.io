@@ -4,7 +4,7 @@ tags: Test MaPSA MPA Probe Tesla
 cover: /assets/images/cover/MaPSApic.png
 ---
 
-# MaPSA Probe Testing
+# Macro Pixel Sub-Assembly (MaPSA) Probe Testing
 
 The Macro Pixel Sub-Assembly (MaPSA) is the bump bonded assembly of the
 pixelated PS-p sensor and the MPA (Macro Pixel ASIC) readout chip. The PS modules contain a strip sensor on the top layer and a the pixelated strip sensor on the bottom layer. This will require sixteen MPA chips (each with a size of 12 mm x 26mm and containing 1918 bumps) to be connected to a single large area sensor piece.
@@ -90,7 +90,7 @@ rtt min/avg/max/mdev = 0.058/0.058/0.058/0.000 ms
 ![MaPSA GUI](/assets/images/MaPSA/GUI1.png)
 
 
-## MaPSA
+## MaPSA Test
 
 ### Step 1: Take the MaPSA
 
@@ -133,6 +133,9 @@ The most reliable way to check the first MPA is by turning the MaPSA around and 
     </ul>
   </div>
 </div>
+
+* After that secure the MaPSA into the chuck by engaging the vacuum
+  * <img src="/assets/images/MaPSA/Vacuum_chuck.jpg" alt="Vacuum Chuck" width="40%">
 
 
 ### Step 3: Setting up the Z-axis 
@@ -191,6 +194,13 @@ The most reliable way to check the first MPA is by turning the MaPSA around and 
   * Sometimes is required to adjust the needles
   * You can see where the needles are making contact by adjusting the focus of the microscope
   * You can move side to side using the back dial from the microscope
+
+#### Aligning the crosshair
+* If the crosshair is not in the same position as the center of the first needle move the microscope using the knobs in the back of it.
+  * The inner one moves the microscope side to side
+  * The outer one moves the microscope up and down
+* Make sure to align it to the center of the first needle after making contact for an easier alignment experience  
+
 
 ### Step 5: Make contact
 
@@ -302,10 +312,38 @@ Line Status:
 * This will plot the current and previous MPA tested
 * Check if the data is sensible, if so, then repeat `Step 4` - `Step 5` and `Step 9` 
 
+### Step 10: Test the other half
+
+To test the other half **(MPAs 9 - 16)** the MaPSA has to be rotated.
+* Set the chuck for removal on Material Handling <img src="/assets/images/MaPSA/Velox_chuck_take_out.jpg" width="20%" height="20%" alt="Take out chuck"> 
+* Take out the chuck
+* Turn off vacuum
+* Carefully rotate the MaPSA as shown:
+<img src="/assets/images/MaPSA/rotateMaPSA.gif" width="20%" alt="Rotate MaPSA">
+
+* Repeat **`Step 2` - `Step 5`** and **`Step 7` - `Step 9`**
+* **Very IMPORTANT:** `Remember to change the MPA # for each run`{:.error}
+
 
 ## Troubleshoot 🛠️
 
-### :warning: **Error:** After Pixel Alive
+### ⁉️ Lost, and don't know which MPA you were at?
+* Between each MPA there is 12mm
+* Guide for X position vs MPA
+
+| MPA First Half | MPA Second Half |  X Position |
+| :---: | :---: | :---: |
+| 1 | 9 | 00000.0 μm |
+| 2 | 10 | 12000.0 μm |
+| 3 | 11 | 24000.0 μm |
+| 4 | 12 | 36000.0 μm |
+| 5 | 13 | 48000.0 μm |
+| 6 | 14 | 60000.0 μm |
+| 7 | 15 | 72000.0 μm |
+| 8 | 16 | 84000.0 μm | 
+
+
+### ⚠️ **Error:** After Pixel Alive
 
 ```java
 pyvisa.error.VisaIOError: VI_ERROR_RSRC_BUSY (-1073807246): The resource is valid, but VISA cannot currently access it.
@@ -315,7 +353,7 @@ pyvisa.error.VisaIOError: VI_ERROR_RSRC_BUSY (-1073807246): The resource is vali
 * Reconnect USB
 * Try again **Pixel Alive**
 
-### :warning: **Error:** No plot after Pixel Alive and the following error: 
+### ⚠️ **Error:** No plot after Pixel Alive and the following error: 
 
 ```java
 Line Status:
